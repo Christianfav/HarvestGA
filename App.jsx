@@ -100,12 +100,11 @@ Keep responses concise and clear.
 const client = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 // ─── Agent Execution Function ─────────────────────
-// ─── Agent Execution Function ─────────────────────
-// ─── Agent Execution Function ─────────────────────
 async function runHarvestAgent(userQuery) {
   const now = new Date();
   const currentMonth = now.toLocaleString("default", { month: "long" });
-  const lowerQuery = userQuery.toLowerCase();// ─────────────────────────────────────────────
+  const lowerQuery = userQuery.toLowerCase();
+// ─────────────────────────────────────────────
 // 📅 INTENT DETECTION (CLEARLY SEPARATED)
 // ─────────────────────────────────────────────
 
@@ -202,7 +201,6 @@ ${isCurrent ? "⭐ " : ""}${item.month}
 }
 
 
-
 // ─────────────────────────────────────────────
 // 🍑 GEORGIA SIGNATURE PRODUCE
 // ─────────────────────────────────────────────
@@ -236,7 +234,6 @@ const matchProduce = userQuery.match(/\{([^}]+)\}/);
 
 let detectedProduce = [];
 
-// 1️⃣ If {braces} used
 if (matchProduce) {
   detectedProduce = matchProduce[1]
     .toLowerCase()
@@ -333,8 +330,6 @@ User Query: ${userQuery}
     lowerQuery.includes("something similar") ||
     lowerQuery.includes("more like this");
     
-
-  // ── Recipes & everything else handled by AI
 
   // 1️⃣ Start with current month produce
   let produceList = Object.keys(storageGuide).join(", ");
